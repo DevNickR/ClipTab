@@ -1,0 +1,11 @@
+# zipped ready to upload asset
+bundle/
+
+# built application
+dist/
+
+# node modules
+node_modules/
+
+# Screenshots used for debugging and uploads to store
+screenshots/

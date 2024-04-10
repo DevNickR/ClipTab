@@ -1,0 +1,23 @@
+{
+  "name": "cliptab",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist/ && rm -rf bundle/ && rm -rf screenshots/ && mkdir dist && mkdir bundle && mkdir screenshots",
+    "build": "npm run clean && tsc && npm run copy-public && npm run screenshot && npm run zip",
+    "copy-public": "cp -R public/* dist/",
+    "screenshot":"node ./dist/other/screenshot.js",
+    "zip": "cd dist/ && zip -r ../bundle/bundle.zip . -x other/*",
+    "postinstall": "npx playwright install-deps && npx playwright install chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.265",
+    "@types/node": "^20.12.5",
+    "playwright": "^1.43.0",
+    "typescript": "^5.4.4"
+  }
+}

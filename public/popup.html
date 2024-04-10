@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clip Tab</title>
+    <style>
+        :root {
+            --button-bg-color: #4f46e5;
+            --button-bg-hover: #3730a3;
+            --button-bg-active: #312e81;
+            --text-color: #ffffff;
+            --background-color: #f3f4f6;
+            --feedback-text-color: #4BB543;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --button-bg-color: #312e81;
+                --button-bg-hover: #4f46e5;
+                --button-bg-active: #3730a3;
+                --text-color: #ffffff;
+                --background-color: #1f2937;
+                --feedback-text-color: #95cc87;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 300px;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            background-color: var(--button-bg-color);
+            border: none;
+            border-radius: 5px;
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--button-bg-hover);
+        }
+
+        button:active {
+            background-color: var(--button-bg-active);
+        }
+
+        .feedback {
+            color: var(--feedback-text-color);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            height: 0;
+        }
+
+        .show-feedback {
+            opacity: 1;
+            height: auto;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="copyButton">Copy to Clipboard</button>
+        <button id="pasteButton">Paste from Clipboard</button>
+        <button id="shuffleButton">Shuffle Tabs</button>
+        <div id="feedback" class="feedback"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
